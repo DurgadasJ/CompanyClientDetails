@@ -30,9 +30,3 @@ public class EnvironmentSetupApplication {
 	}
 
 }
-/*
-Heap dump has been created at C:\Users\Swapnali joshi\AppData\Local\JetBrains\IdeaIC2023.1\tmp\hprof-temp\heapDump-idea-1720542914185.hprof. It will be analyzed next time you start IntelliJ IDEA.Heap dump has been created at C:\Users\Swapnali joshi\AppData\Local\JetBrains\IdeaIC2023.1\tmp\hprof-temp\heapDump-idea-1720542914185.hprof. It will be analyzed next time you start IntelliJ IDEA.
- must be manually assigned before calling 'persist()'
-	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:209) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-
- */
