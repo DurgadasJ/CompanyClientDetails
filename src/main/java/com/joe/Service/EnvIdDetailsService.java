@@ -15,7 +15,7 @@ public class EnvIdDetailsService {
     }
 
     @Transactional
-    public EnvIdDetails createOrUpdateEnvIdDetails(Long clientId, String clientName, String clientGroup, String emailGroup, String managerName) {
+    public EnvIdDetails createOrUpdateEnvIdDetails(Long clientId, String clientName, String clientGroup, String emailGroup, String managerName,String location) {
         EnvIdDetails clientIdDetails = envIdDetailsRepository.findById(clientId).orElse(new EnvIdDetails());
 
         // Set properties using Lombok-generated setters
@@ -23,6 +23,7 @@ public class EnvIdDetailsService {
         clientIdDetails.setClientGroup(clientGroup);
         clientIdDetails.setEmailGroup(emailGroup);
         clientIdDetails.setManagerName(managerName);
+        clientIdDetails.setLocation(location);
 
         // Save and return the entity
         return envIdDetailsRepository.save(clientIdDetails);

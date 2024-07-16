@@ -23,6 +23,9 @@ public class EnvIdDetails {
     @Column(name = "manager")
     private String managerName;
 
+    @Column(name = "location")
+    private String location;
+
     public EnvIdDetails() {
     }
 
@@ -64,5 +67,13 @@ public class EnvIdDetails {
 
     public void setManagerName(String managerName) {
         this.managerName = managerName;
+    }
+
+    public String getLocation(){
+        return location;
+    }
+
+    public void setLocation(String location){
+        this.location = location;
     }
 }
