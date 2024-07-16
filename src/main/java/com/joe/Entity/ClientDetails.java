@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "companyClient_Details")
-public class EnvIdDetails {
+public class ClientDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +26,7 @@ public class EnvIdDetails {
     @Column(name = "location")
     private String location;
 
-    public EnvIdDetails() {
+    public ClientDetails() {
     }
 
     public Long getClientId() {

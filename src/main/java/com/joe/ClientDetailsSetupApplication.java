@@ -1,22 +1,22 @@
 package com.joe;
 
-import com.joe.Repository.EnvIdDetailsRepository;
+import com.joe.Repository.ClientDetailsRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
-public class EnvironmentSetupApplication {
+public class ClientDetailsSetupApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext context = SpringApplication.run(EnvironmentSetupApplication.class, args);
+		ApplicationContext context = SpringApplication.run(ClientDetailsSetupApplication.class, args);
 
 		// Retrieve the repository bean from the application context
-		EnvIdDetailsRepository repository = context.getBean(EnvIdDetailsRepository.class);
+		ClientDetailsRepository repository = context.getBean(ClientDetailsRepository.class);
 
 		// Sample data
-		//EnvIdDetails details1 = new EnvIdDetails("proj1", "Project A", "Group A", "groupa@example.com", "John Doe");
-		//EnvIdDetails details2 = new EnvIdDetails("proj2", "Project B", "Group B", "groupb@example.com", "Jane Smith");
+		//ClientDetails details1 = new ClientDetails("proj1", "Project A", "Group A", "groupa@example.com", "John Doe");
+		//ClientDetails details2 = new ClientDetails("proj2", "Project B", "Group B", "groupb@example.com", "Jane Smith");
 
 		// Save sample data to the database within a transaction
 		//repository.save(details1);
