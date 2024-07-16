@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Environment ID Details</title>
+  <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Optional CSS -->
+</head>
+<body>
+<h1>Environment ID Details</h1>
+
+<a th:href="@{/api/env-id-details/new}" class="button">Add New Account Details</a>
+
+<table border="1">
+  <thead>
+  <tr>
+    <th>Project Name</th>
+    <th>Project Group</th>
+    <th>Email Group</th>
+    <th>Manager</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="detail : ${details}">
+    <td th:text="${detail.projectName}"></td>
+    <td th:text="${detail.projectGroup}"></td>
+    <td th:text="${detail.emailGroup}"></td>
+    <td th:text="${detail.managerName}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

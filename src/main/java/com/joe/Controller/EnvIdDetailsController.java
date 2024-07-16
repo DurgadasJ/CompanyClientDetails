@@ -1,15 +1,16 @@
 package com.joe.Controller;
 
+
 import com.joe.Entity.EnvIdDetails;
 import com.joe.Repository.EnvIdDetailsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
-import java.util.Optional;
 
-@RestController
+@Controller
 @RequestMapping("/api/env-id-details")
 public class EnvIdDetailsController {
 
@@ -20,21 +21,22 @@ public class EnvIdDetailsController {
         this.repository = repository;
     }
 
-    @GetMapping
-    public List<EnvIdDetails> getAllEnvIdDetails() {
-        return repository.findAll();
+    @GetMapping("/new")
+    public String showForm(Model model) {
+        model.addAttribute("envIdDetails", new EnvIdDetails());
+        return "form"; // This assumes a Thymeleaf template named 'form.html'
     }
 
-    @GetMapping("/{id}")
-    public EnvIdDetails getEnvIdDetailsById(@PathVariable Long id) {
-        return repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("EnvIdDetails not found with id " + id));
+    @GetMapping("/env_id_details")
+    public String getAllEnvIdDetails(Model model) {
+        List<EnvIdDetails> details = repository.findAll();
+        model.addAttribute("details", details);
+        return "list"; // this should correspond to the template name
     }
 
     @PostMapping
-    public EnvIdDetails createEnvIdDetails(@RequestBody EnvIdDetails envIdDetails) {
-        return repository.save(envIdDetails);
+    public String createEnvIdDetails(@ModelAttribute EnvIdDetails envIdDetails) {
+        repository.save(envIdDetails);
+        return "redirect:/api/env-id-details/env_id_details"; // Note: This will not redirect with @RestController
     }
-
-    // Other CRUD operations as needed (PUT, DELETE, etc.)
 }

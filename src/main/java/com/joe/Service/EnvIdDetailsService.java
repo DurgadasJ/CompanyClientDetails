@@ -12,14 +12,17 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class EnvIdDetailsService {
 
-    @Autowired
-    private EnvIdDetailsRepository envIdDetailsRepository;
+    private final EnvIdDetailsRepository envIdDetailsRepository;
+
+    public EnvIdDetailsService(EnvIdDetailsRepository envIdDetailsRepository) {
+        this.envIdDetailsRepository = envIdDetailsRepository;
+    }
 
     @Transactional
     public EnvIdDetails createOrUpdateEnvIdDetails(Long projId, String projectName, String projectGroup, String emailGroup, String managerName) {
         EnvIdDetails envIdDetails = envIdDetailsRepository.findById(projId).orElse(new EnvIdDetails());
 
-        // Set properties
+        // Set properties using Lombok-generated setters
         envIdDetails.setProjectName(projectName);
         envIdDetails.setProjectGroup(projectGroup);
         envIdDetails.setEmailGroup(emailGroup);

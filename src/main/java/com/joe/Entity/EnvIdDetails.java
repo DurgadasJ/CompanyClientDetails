@@ -26,8 +26,6 @@ public class EnvIdDetails {
     public EnvIdDetails() {
     }
 
-    // Getters and setters (omitted for brevity, but ensure they are properly implemented)
-
     public Long getProjId() {
         return projId;
     }
