@@ -1,10 +1,8 @@
 package com.joe;
 
-import com.joe.Entity.EnvIdDetails;
 import com.joe.Repository.EnvIdDetailsRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication

@@ -2,26 +2,42 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Environment ID Details</title>
-  <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Optional CSS -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <!-- Optional CSS -->
+  <style>
+    .button {
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #007bff; /* Primary button color */
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    }
+
+    .button.highlight:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    }
+  </style>
 </head>
 <body>
+<a th:href="@{/api/env-id-details/new}" class="button highlight">Add New Account Details</a>
+
 <h1>Environment ID Details</h1>
-
-<a th:href="@{/api/env-id-details/new}" class="button">Add New Account Details</a>
-
 <table border="1">
   <thead>
   <tr>
-    <th>Project Name</th>
-    <th>Project Group</th>
+    <th>Client Id</th>
+    <th>Client Name</th>
+    <th>Client Group</th>
     <th>Email Group</th>
     <th>Manager</th>
   </tr>
   </thead>
   <tbody>
   <tr th:each="detail : ${details}">
-    <td th:text="${detail.projectName}"></td>
-    <td th:text="${detail.projectGroup}"></td>
+    <td th:text="${detail.clientId}"></td>
+    <td th:text="${detail.clientName}"></td>
+    <td th:text="${detail.clientGroup}"></td>
     <td th:text="${detail.emailGroup}"></td>
     <td th:text="${detail.managerName}"></td>
   </tr>

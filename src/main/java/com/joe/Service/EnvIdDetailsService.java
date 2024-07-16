@@ -2,10 +2,6 @@ package com.joe.Service;
 
 import com.joe.Entity.EnvIdDetails;
 import com.joe.Repository.EnvIdDetailsRepository;
-
-
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,17 +15,17 @@ public class EnvIdDetailsService {
     }
 
     @Transactional
-    public EnvIdDetails createOrUpdateEnvIdDetails(Long projId, String projectName, String projectGroup, String emailGroup, String managerName) {
-        EnvIdDetails envIdDetails = envIdDetailsRepository.findById(projId).orElse(new EnvIdDetails());
+    public EnvIdDetails createOrUpdateEnvIdDetails(Long clientId, String clientName, String clientGroup, String emailGroup, String managerName) {
+        EnvIdDetails clientIdDetails = envIdDetailsRepository.findById(clientId).orElse(new EnvIdDetails());
 
         // Set properties using Lombok-generated setters
-        envIdDetails.setProjectName(projectName);
-        envIdDetails.setProjectGroup(projectGroup);
-        envIdDetails.setEmailGroup(emailGroup);
-        envIdDetails.setManagerName(managerName);
+        clientIdDetails.setClientName(clientName);
+        clientIdDetails.setClientGroup(clientGroup);
+        clientIdDetails.setEmailGroup(emailGroup);
+        clientIdDetails.setManagerName(managerName);
 
         // Save and return the entity
-        return envIdDetailsRepository.save(envIdDetails);
+        return envIdDetailsRepository.save(clientIdDetails);
     }
 
 

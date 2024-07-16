@@ -3,19 +3,19 @@ package com.joe.Entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "company_Details")
+@Table(name = "companyClient_Details")
 public class EnvIdDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "proj_id")
-    private Long projId;
+    @Column(name = "client_id")
+    private Long clientId;
 
-    @Column(name = "project_name")
-    private String projectName;
+    @Column(name = "client_name")
+    private String clientName;
 
-    @Column(name = "project_group")
-    private String projectGroup;
+    @Column(name = "client_group")
+    private String clientGroup;
 
     @Column(name = "email_group")
     private String emailGroup;
@@ -26,28 +26,28 @@ public class EnvIdDetails {
     public EnvIdDetails() {
     }
 
-    public Long getProjId() {
-        return projId;
+    public Long getClientId() {
+        return clientId;
     }
 
-    public void setProjId(Long projId) {
-        this.projId = projId;
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
 
-    public String getProjectName() {
-        return projectName;
+    public String getClientName() {
+        return clientName;
     }
 
-    public void setProjectName(String projectName) {
-        this.projectName = projectName;
+    public void setClientName(String clientName) {
+        this.clientName = clientName;
     }
 
-    public String getProjectGroup() {
-        return projectGroup;
+    public String getClientGroup() {
+        return clientGroup;
     }
 
-    public void setProjectGroup(String projectGroup) {
-        this.projectGroup = projectGroup;
+    public void setClientGroup(String clientGroup) {
+        this.clientGroup = clientGroup;
     }
 
     public String getEmailGroup() {
