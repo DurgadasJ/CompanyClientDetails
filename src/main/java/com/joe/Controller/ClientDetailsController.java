@@ -33,6 +33,7 @@ public class ClientDetailsController {
         return "list"; // this should correspond to the template name
     }
 
+
     @PostMapping
     public String createClientIdDetails(@ModelAttribute ClientDetails clientDetails) {
         repository.save(clientDetails);
