@@ -14,8 +14,4 @@ public class EmailNotifierController {
     @Autowired
     private EmailNotifierService emailService;
 
-    @PostMapping("/upsert")
-    public ResponseEntity<String> upsertEmailNotifications() {
-        emailService.upsertEmailNotifications();
-        return ResponseEntity.ok("Email notifications upserted successfully.");
-    }}
+}

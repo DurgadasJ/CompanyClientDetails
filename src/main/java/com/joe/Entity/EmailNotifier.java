@@ -2,26 +2,20 @@ package com.joe.Entity;
 
 import jakarta.persistence.*;
 
+import javax.annotation.processing.Generated;
+
 
 @Entity
-@Table(name = "emailNotify_details")
+@Table(name = "email_notifydetails")
 public class EmailNotifier {
 
     @Id
-    @Column(name = "client_id")
-    private long clientId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private long id;
 
     @Column(name = "sender_emailAddress")
     private String senderEmail;
 
-    @Column(name = "client_name")
-    private String clientName;
-
-    @Column(name = "receiver_emailAddress")
-    private String receiverEmail;
-
-    @ManyToOne
-    @JoinColumn(name = "client_id", insertable = false, updatable = false)
-    private ClientDetails clientDetails;
 
 }
